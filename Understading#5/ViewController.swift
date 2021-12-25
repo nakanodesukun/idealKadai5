@@ -45,16 +45,24 @@ class ViewController: UIViewController {
 
     
     
-//    throwキーワドを使っているからdo catch文を
+//    do catch文でどのようなエラーが起きたのか判別する
     
     @IBAction func calculateButton(_ sender: Any) {
         do {
             let result = try calculate(num1: String(firstText.text ?? ""), num2: (secondText.text ?? ""))
             resultLabel.text = String(result)
+        } catch let error as alert {
+            alertDisplay(message: error.name)
         } catch {
-            print(alert.noZero)
+            alertDisplay(message: "予期せぬエラーが見つかりました")
         }
         
+    }
+    func alertDisplay(message: String) {
+        //アラート作成
+        let alert = UIAlertController(title: "課題５", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     
