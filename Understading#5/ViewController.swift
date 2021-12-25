@@ -62,6 +62,9 @@ class ViewController: UIViewController {
         //アラート作成
         let alert = UIAlertController(title: "課題５", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        //省略しない書き方
+        //        let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+        //        alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
     
