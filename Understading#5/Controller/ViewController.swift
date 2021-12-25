@@ -12,9 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondText: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  
     enum alert: Error {
         case nodivided//割られる数がない
         case noDivide //割る数がない
@@ -36,14 +34,14 @@ class ViewController: UIViewController {
             }
             guard let divide = Double(num2) else {
                 throw alert.nodivided
-            }
+            }//trow catchのイメージ（投げる捕る）
             guard divide != 0 else {
                 throw alert.noZero
             }
             return divided / divide
         }
 
-    
+   //---------------------------------model--------------------------------------------
     
 //    do catch文でどのようなエラーが起きたのか判別する
     
@@ -58,7 +56,7 @@ class ViewController: UIViewController {
         }
         
     }
-    func alertDisplay(message: String) {
+   private func alertDisplay(message: String) {
         //アラート作成
         let alert = UIAlertController(title: "課題５", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -67,7 +65,7 @@ class ViewController: UIViewController {
         //        alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
-    
+//---------------------------------controller---------------------------------------------------------
     
     
     
