@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondText: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
-  
+//----------------------model----------------------------------------------------------
     enum alert: Error {
         case nodivided//割られる数がない
         case noDivide //割る数がない
