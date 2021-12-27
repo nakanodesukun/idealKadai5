@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculateButton(_ sender: Any) {
         do {
-            let result = try calculate(num1: String(firstText.text ?? ""), num2: (secondText.text ?? ""))
+            let result = try calculate(num1: (firstText.text ?? ""), num2: (secondText.text ?? ""))
             resultLabel.text = String(result)
         } catch let error as alert {
             alertDisplay(message: error.name)
