@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var secondText: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
-//----------------------model----------------------------------------------------------
+//----------------------model↓----------------------------------------------------------
     enum alert: Error {
         case nodivided//割られる数がない
         case noDivide //割る数がない
@@ -41,12 +41,12 @@ class ViewController: UIViewController {
             return divided / divide
         }
 
-   //---------------------------------model--------------------------------------------
+   //---------------------------------controller↓--------------------------------------------
     
 //    do catch文でどのようなエラーが起きたのか判別する
     
     @IBAction func calculateButton(_ sender: Any) {
-        do {
+        do {  
             let result = try calculate(num1: (firstText.text ?? ""), num2: (secondText.text ?? ""))
             resultLabel.text = String(result)
         } catch let error as alert {
@@ -65,8 +65,7 @@ class ViewController: UIViewController {
         //        alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
-//---------------------------------controller---------------------------------------------------------
-    
+
     
     
     
